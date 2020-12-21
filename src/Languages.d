@@ -8,6 +8,20 @@ module dolocat.languages;
 
 import std.stdio, std.string, dolocat.colorized;
 
+string Predefined(string line) {
+    line = line.replace("::",  WBOLD_LIGHT_YELLOW_COLOR ~ "::" ~ WBOLD_WHITE_COLOR);
+	line = line.replace("{",  WBOLD_LIGHT_YELLOW_COLOR ~ "{" ~ WBOLD_WHITE_COLOR);
+	line = line.replace("}",  WBOLD_LIGHT_YELLOW_COLOR ~ "}" ~ WBOLD_WHITE_COLOR);
+	line = line.replace("(",  WBOLD_LIGHT_YELLOW_COLOR ~ "(" ~ WBOLD_WHITE_COLOR);
+	line = line.replace(")",  WBOLD_LIGHT_YELLOW_COLOR ~ ")" ~ WBOLD_WHITE_COLOR);
+	line = line.replace("*",  WBOLD_LIGHT_YELLOW_COLOR ~ "*" ~ WBOLD_WHITE_COLOR);
+	line = line.replace("<",  WBOLD_LIGHT_YELLOW_COLOR ~ "<" ~ WBOLD_WHITE_COLOR);
+	line = line.replace(">",  WBOLD_LIGHT_YELLOW_COLOR ~ ">" ~ WBOLD_WHITE_COLOR);
+	line = line.replace("+",  WBOLD_LIGHT_YELLOW_COLOR ~ "+" ~ WBOLD_WHITE_COLOR);
+
+    return line;
+}
+
 void CPlusPlus(string line) {
 	line = line.replace("int", WBOLD_RED_COLOR ~ "int" ~ WBOLD_WHITE_COLOR);
 	
@@ -90,6 +104,8 @@ void CPlusPlus(string line) {
 	line = line.replace("printf", WBOLD_CYAN_COLOR ~ "printf" ~ WBOLD_WHITE_COLOR);
 	line = line.replace("getline", WBOLD_CYAN_COLOR ~ "getline" ~ WBOLD_WHITE_COLOR);
 	line = line.replace("cin", WBOLD_CYAN_COLOR ~ "cin" ~ WBOLD_WHITE_COLOR);
+	
+	line = Predefined(line);
 	
 	line.write;
 }
