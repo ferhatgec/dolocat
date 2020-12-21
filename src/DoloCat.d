@@ -41,6 +41,10 @@ int main(string[] argv) {
 		while((line = file.readln()) !is null) {
 			Python(line);
 		}
+	} else if(argv[1].indexOf(".htm") != -1) {
+		while((line = file.readln()) !is null) {
+			HTML(line);
+		}
 	} else {
 		/* Regular */
 		while((line = file.readln()) !is null) {
