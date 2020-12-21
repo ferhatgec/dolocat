@@ -3,4 +3,4 @@
 # llvm-based: ldc
 # gcc-based : gdc
 # official  : dmd *
-dmd lib/Colorized.d src/Languages.d src/DoloCat.d -of=dolocat
+dmd lib/Colorized.d src/Header.d src/Languages.d src/DoloCat.d -of=dolocat

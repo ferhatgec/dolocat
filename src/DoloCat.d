@@ -5,8 +5,7 @@
 #*/
 
 import std.stdio, std.string;
-import dolocat.languages, dolocat.colorized;
-import std.conv : to;
+import dolocat.languages, dolocat.colorized, dolocat.header;
 
 /* uhh. D does not have a preprocessor. */
 string Version = "0.1"; 
@@ -25,28 +24,50 @@ int main(string[] argv) {
 		return 0;
 	}
 	
+	int language = 0;
 	auto file = File(argv[1], "r");
-        string line;
-        
+	string line;
+    
+	PrintTopHeader(10);
+	
 	/* check file extension */
 	if(argv[1].indexOf(".cpp") != -1) {
+		language = 1;
+		CenterText(argv[1], "C++");
+	} else if(argv[1].indexOf(".fls") != -1) {
+		language = 2;
+		CenterText(argv[1], "FlaScript");
+	} else if(argv[1].indexOf(".py") != -1) {
+		language = 3;
+		CenterText(argv[1], "Python");
+	} else if(argv[1].indexOf(".htm") != -1) {
+		language = 4;
+		CenterText(argv[1], "HTML");
+	} else {
+		language = 0;
+		CenterText(argv[1], "Regular");
+	}
+
+	PrintBottomHeader(10);
+
+	if(language == 1) {	
 		while((line = file.readln()) !is null) {
 			CPlusPlus(line);
 		}
-	} else if(argv[1].indexOf(".fls") != -1) {
+	} else if(language == 2) {
 		while((line = file.readln()) !is null) {
 			FlaScript(line);
 		}
-	} else if(argv[1].indexOf(".py") != -1) {
+	} else if(language == 3) {
 		while((line = file.readln()) !is null) {
 			Python(line);
 		}
-	} else if(argv[1].indexOf(".htm") != -1) {
+	} else if(language == 4) {
 		while((line = file.readln()) !is null) {
 			HTML(line);
 		}
 	} else {
-		/* Regular */
+		/* Regular (0) */
 		while((line = file.readln()) !is null) {
 			line.write;
 		}
