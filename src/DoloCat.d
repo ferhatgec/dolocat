@@ -33,6 +33,10 @@ int main(string[] argv) {
 		while((line = file.readln()) !is null) {
 			CPlusPlus(line);
 		}
+	} else if(argv[1].indexOf(".fls") != -1) {
+		while((line = file.readln()) !is null) {
+			FlaScript(line);
+		}
 	} else {
 		/* Regular */
 		while((line = file.readln()) !is null) {

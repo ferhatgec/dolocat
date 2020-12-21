@@ -109,3 +109,51 @@ void CPlusPlus(string line) {
 	
 	line.write;
 }
+
+void FlaScript(string line) {
+	line = line.replace("var", WBOLD_BLUE_COLOR ~ "var" ~ WBOLD_WHITE_COLOR);
+	
+	line = line.replace("bool", WBOLD_LIGHT_BLUE_COLOR ~ "bool" ~ WBOLD_WHITE_COLOR);
+	line = line.replace("int",  WBOLD_LIGHT_BLUE_COLOR ~ "int" ~ WBOLD_WHITE_COLOR);
+	line = line.replace("string",  WBOLD_LIGHT_BLUE_COLOR ~ "string" ~ WBOLD_WHITE_COLOR);
+
+
+	line = line.replace("if",  WBOLD_LIGHT_RED_COLOR ~ "if" ~ WBOLD_WHITE_COLOR);
+	line = line.replace("else",  WBOLD_LIGHT_RED_COLOR ~ "else" ~ WBOLD_WHITE_COLOR);
+	
+	line = line.replace("for",  WBOLD_MAGENTA_COLOR ~ "for" ~ WBOLD_WHITE_COLOR);
+	line = line.replace("do",  WBOLD_MAGENTA_COLOR ~ "do" ~ WBOLD_WHITE_COLOR);
+	line = line.replace("while",  WBOLD_MAGENTA_COLOR ~ "while" ~ WBOLD_WHITE_COLOR);
+	
+	line = line.replace("func",  WBOLD_RED_COLOR ~ "void" ~ WBOLD_WHITE_COLOR);
+	line = line.replace("main",  WBOLD_LIGHT_RED_COLOR ~ "main" ~ WBOLD_WHITE_COLOR);
+	
+	
+	line = line.replace("@append",  WBOLD_LIGHT_YELLOW_COLOR ~ "@append" ~ WBOLD_WHITE_COLOR);
+	line = line.replace("@pop_back",  WBOLD_LIGHT_YELLOW_COLOR ~ "@pop_back" ~ WBOLD_WHITE_COLOR);
+	line = line.replace("@between",  WBOLD_LIGHT_YELLOW_COLOR ~ "@between" ~ WBOLD_WHITE_COLOR);
+	
+	line = line.replace("import",  WBOLD_YELLOW_COLOR ~ "import" ~ WBOLD_WHITE_COLOR);
+	
+	line = line.replace("defin",  WBOLD_MAGENTA_COLOR ~ "defin" ~ WBOLD_WHITE_COLOR);
+	line = line.replace("put",  WBOLD_MAGENTA_COLOR ~ "put" ~ WBOLD_WHITE_COLOR);
+	
+	line = line.replace("#ifdef",  WBOLD_MAGENTA_COLOR ~ "#ifdef" ~ WBOLD_WHITE_COLOR);
+	line = line.replace("#endif",  WBOLD_MAGENTA_COLOR ~ "#endif" ~ WBOLD_WHITE_COLOR);
+	
+	line = line.replace("return",  WBOLD_LIGHT_MAGENTA_COLOR ~ "return" ~ WBOLD_WHITE_COLOR);
+	
+	line = line.replace("SystemInfo",  WBOLD_LIGHT_MAGENTA_COLOR ~ "SystemInfo" ~ WBOLD_WHITE_COLOR);
+	line = line.replace("Colorized",  WBOLD_LIGHT_MAGENTA_COLOR ~ "Colorized" ~ WBOLD_WHITE_COLOR);
+		
+	line = line.replace("newline",  WBOLD_LIGHT_BLACK_COLOR ~ "newline" ~ WBOLD_WHITE_COLOR);
+		
+	line = line.replace("print",  WBOLD_CYAN_COLOR ~ "print" ~ WBOLD_WHITE_COLOR);
+	line = line.replace("fprintf",  WBOLD_CYAN_COLOR ~ "fprintf" ~ WBOLD_WHITE_COLOR);
+	line = line.replace("@echo",  WBOLD_CYAN_COLOR ~ "@echo" ~ WBOLD_WHITE_COLOR);
+	line = line.replace("fprintln",  WBOLD_CYAN_COLOR ~ "fprintln" ~ WBOLD_WHITE_COLOR);
+	
+	line = Predefined(line);
+	
+	line.write;
+}
