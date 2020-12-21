@@ -37,6 +37,10 @@ int main(string[] argv) {
 		while((line = file.readln()) !is null) {
 			FlaScript(line);
 		}
+	} else if(argv[1].indexOf(".py") != -1) {
+		while((line = file.readln()) !is null) {
+			Python(line);
+		}
 	} else {
 		/* Regular */
 		while((line = file.readln()) !is null) {

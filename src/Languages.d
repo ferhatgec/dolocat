@@ -157,3 +157,32 @@ void FlaScript(string line) {
 	
 	line.write;
 }
+
+void Python(string line) {
+	line = line.replace("if", WBOLD_LIGHT_RED_COLOR ~ "if" ~ WBLACK_COLOR);
+	line = line.replace("else", WBOLD_LIGHT_RED_COLOR ~ "else" ~ WBLACK_COLOR);
+	line = line.replace("elif", WBOLD_LIGHT_RED_COLOR ~ "elif" ~ WBLACK_COLOR);
+	
+	line = line.replace("for", WBOLD_MAGENTA_COLOR ~ "for" ~ WBLACK_COLOR);
+	line = line.replace("while", WBOLD_MAGENTA_COLOR ~ "while" ~ WBLACK_COLOR);
+
+	line = line.replace("str",WBOLD_BLUE_COLOR ~ "str" ~ WBLACK_COLOR);
+	line = line.replace("bool",WBOLD_BLUE_COLOR ~ "bool" ~ WBLACK_COLOR);
+	line = line.replace("float",WBOLD_BLUE_COLOR ~ "float" ~ WBLACK_COLOR);
+	
+	line = line.replace("def", WBOLD_RED_COLOR ~ "def" ~ WBLACK_COLOR);
+	line = line.replace("lambda", WBOLD_RED_COLOR ~ "lambda" ~ WBLACK_COLOR);
+	
+	line = line.replace("import", WBOLD_YELLOW_COLOR ~ "import" ~ WBLACK_COLOR);
+	line = line.replace("from", WBOLD_LIGHT_YELLOW_COLOR ~ "from" ~ WBLACK_COLOR);
+	
+	line = line.replace("global", WBOLD_LIGHT_BLUE_COLOR ~ "global" ~ WBLACK_COLOR);
+	
+	line = line.replace("return", WBOLD_LIGHT_MAGENTA_COLOR ~ "return" ~ WBLACK_COLOR);
+		
+	line = line.replace("print", WBOLD_CYAN_COLOR ~ "print" ~ WBLACK_COLOR);
+	
+	line = Predefined(line);
+	
+	line.write;
+}
